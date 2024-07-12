@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Duha</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+body, html {
+  height: 100%;
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+}
+
+/* Full height image header */
+.bgimg-1 {
+  background-position: center;
+  background-size: cover;
+  background-image: url("./assets/bg1.jpg");
+  min-height: 100%;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+  padding: 16px;
+  display: inline-block;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+}
+
+.navbar .right {
+  float: right;
+}
+
+.navbar .menu-icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .navbar a:not(:first-child) {display: none;}
+  .navbar a.menu-icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navbar.responsive {position: relative;}
+  .navbar.responsive .menu-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .navbar.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+.sidebar {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: black;
+  padding-top: 60px;
+  overflow: auto;
+  transition: 0.5s;
+}
+
+.sidebar a {
+  padding: 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #575757;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}
+
+.container {
+  padding: 128px 16px;
+}
+
+.light-grey {
+  background-color: #f1f1f1;
+}
+
+.dark-grey {
+  background-color: #616161;
+  color: white;
+}
+
+.wide {
+  letter-spacing: 4px;
+}
+
+.center {
+  text-align: center;
+}
+
+.jumbo {
+  font-size: 64px;
+}
+
+.xxlarge {
+  font-size: 36px;
+}
+
+.large {
+  font-size: 24px;
+}
+
+.margin-top {
+  margin-top: 64px;
+}
+
+.margin-bottom {
+  margin-bottom: 64px;
+}
+
+.padding-large {
+  padding: 24px;
+}
+
+.padding-16 {
+  padding: 16px;
+}
+
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.card img {
+  width: 100%;
+}
+
+.card .container {
+  padding: 16px;
+}
+
+.grid-quarter {
+  float: left;
+  width: 25%;
+  padding: 16px;
+}
+
+.row-padding::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 768px) {
+  .grid-quarter {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .grid-quarter {
+    width: 100%;
+  }
+}
+
+.round-large {
+  border-radius: 8px;
+}
+
+.hover-opacity:hover {
+  opacity: 0.75;
+}
+
+button {
+  border: none;
+  display: inline-block;
+  padding: 8px 16px;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+</style>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="navbar" id="myNavbar">
+  <a href="#home" class="wide">DUHA Softwares</a>
+  <div class="right">
+    <a href="#about">ABOUT</a>
+    <a href="#team"><i class="fa fa-user"></i> TEAM</a>
+    <a href="#work"><i class="fa fa-th"></i> WORK</a>
+    <a href="#pricing"><i class="fa fa-usd"></i> PRICING</a>
+    <a href="#contact"><i class="fa fa-envelope"></i> CONTACT</a>
+  </div>
+  <a href="javascript:void(0);" class="menu-icon" onclick="w3_open()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="sidebar" id="mySidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="w3_close()">×</a>
+  <a href="#about" onclick="w3_close()">ABOUT</a>
+  <a href="#team" onclick="w3_close()">TEAM</a>
+  <a href="#work" onclick="w3_close()">WORK</a>
+  <a href="#pricing" onclick="w3_close()">PRICING</a>
+  <a href="#contact" onclick="w3_close()">CONTACT</a>
+</nav>
+
+<!-- Header with full-height image -->
+<header class="bgimg-1" id="home">
+  <div class="container">
+    <div class="text-white">
+      <span class="jumbo hide-small">Start something that matters</span><br>
+      <span class="xxlarge hide-large hide-medium">Start something that matters</span><br>
+      <span class="large">Stop wasting valuable time with projects that just isn't you.</span>
+      <p><a href="#about" class="button padding-large large margin-top opacity">Learn more and start today</a></p>
+    </div> 
+    <div class="text-grey large" style="padding:24px 48px">
+      <i class="fa fa-facebook-official hover-opacity"></i>
+      <i class="fa fa-instagram hover-opacity"></i>
+      <i class="fa fa-snapchat hover-opacity"></i>
+      <i class="fa fa-pinterest-p hover-opacity"></i>
+      <i class="fa fa-twitter hover-opacity"></i>
+      <i class="fa fa-linkedin hover-opacity"></i>
+    </div>
+  </div>
+</header>
+
+<!-- About Section -->
+<div class="container" id="about">
+  <h3 class="center">ABOUT THE COMPANY</h3>
+  <p class="center large">Key features of our company</p>
+  <div class="row-padding center margin-top">
+    <div class="grid-quarter">
+      <i class="fa fa-desktop margin-bottom jumbo"></i>
+      <p class="large">Responsive</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+    </div>
+    <div class="grid-quarter">
+      <i class="fa fa-heart margin-bottom jumbo"></i>
+      <p class="large">Passion</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+    </div>
+    <div class="grid-quarter">
+      <i class="fa fa-diamond margin-bottom jumbo"></i>
+      <p class="large">Design</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+    </div>
+    <div class="grid-quarter">
+      <i class="fa fa-cog margin-bottom jumbo"></i>
+      <p class="large">Support</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Promo Section - "We know design" -->
+<div class="container light-grey">
+  <div class="row-padding">
+    <div class="col m6">
+      <h3>We know design.</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>tempor incididunt ut labore et dolore.</p>
+      <p><a href="#work" class="button"><i class="fa fa-th"></i> View Our Works</a></p>
+    </div>
+    <div class="col m6">
+       <img class="round-large" src="/w3images/team2.jpg" alt="Team">
+    </div>
+  </div>
+</div>
+
+<!-- Team Section -->
+<div class="container" id="team">
+  <h3 class="center">THE TEAM</h3>
+  <p class="center large">The ones who runs this company</p>
+  <div class="row-padding margin-top">
+    <div class="grid-quarter">
+      <img src="/w3images/avatar.jpg" alt="Boss" class="round-large" style="width:100%">
+      <h3>John Doe</h3>
+      <p class="large">CEO & Founder</p>
+      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+    </div>
+    <div class="grid-quarter">
+      <img src="/w3images/avatar.jpg" alt="Boss" class="round-large" style="width:100%">
+      <h3>Jane Doe</h3>
+      <p class="large">Art Director</p>
+      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+    </div>
+    <div class="grid-quarter">
+      <img src="/w3images/avatar.jpg" alt="Boss" class="round-large" style="width:100%">
+      <h3>Mike Ross</h3>
+      <p class="large">Web Designer</p>
+      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+    </div>
+    <div class="grid-quarter">
+      <img src="/w3images/avatar.jpg" alt="Boss" class="round-large" style="width:100%">
+      <h3>Dan Star</h3>
+      <p class="large">Support</p>
+      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Work Section -->
+<div class="container dark-grey" id="work">
+  <h3 class="center">OUR WORK</h3>
+  <p class="center large">What we've done for people</p>
+  <div class="row-padding margin-top">
+    <div class="grid-quarter">
+      <div class="card">
+        <img src="/w3images/mountains.jpg" alt="Mountains">
+        <div class="container">
+          <h3>Mountains</h3>
+          <p class="large">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+        </div>
+      </div>
+    </div>
+    <div class="grid-quarter">
+      <div class="card">
+        <img src="/w3images/lights.jpg" alt="Lights">
+        <div class="container">
+          <h3>Lights</h3>
+          <p class="large">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+        </div>
+      </div>
+    </div>
+    <div class="grid-quarter">
+      <div class="card">
+        <img src="/w3images/nature.jpg" alt="Nature">
+        <div class="container">
+          <h3>Nature</h3>
+          <p class="large">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+        </div>
+      </div>
+    </div>
+    <div class="grid-quarter">
+      <div class="card">
+        <img src="/w3images/mountains.jpg" alt="Mountains">
+        <div class="container">
+          <h3>Mountains</h3>
+          <p class="large">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Pricing Section -->
+<div class="container light-grey" id="pricing">
+  <h3 class="center">PRICING</h3>
+  <p class="center large">Choose a pricing plan that fits your needs.</p>
+  <div class="row-padding margin-top">
+    <div class="grid-quarter">
+      <div class="card padding-large">
+        <h3>Basic</h3>
+        <p class="large">$ 10</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      </div>
+    </div>
+    <div class="grid-quarter">
+      <div class="card padding-large">
+        <h3>Pro</h3>
+        <p class="large">$ 25</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      </div>
+    </div>
+    <div class="grid-quarter">
+      <div class="card padding-large">
+        <h3>Premium</h3>
+        <p class="large">$ 50</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      </div>
+    </div>
+    <div class="grid-quarter">
+      <div class="card padding-large">
+        <h3>Ultimate</h3>
+        <p class="large">$ 100</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Section -->
+<div class="container" id="contact">
+  <h3 class="center">CONTACT</h3>
+  <p class="center large">Lets get in touch. Send us a message:</p>
+  <div class="row-padding margin-top">
+    <div class="col m6">
+      <form action="/action_page.php" target="_blank">
+        <div class="row-padding">
+          <div class="col m6">
+            <input class="input border" type="text" placeholder="Name" required name="Name">
+          </div>
+          <div class="col m6">
+            <input class="input border" type="text" placeholder="Email" required name="Email">
+          </div>
+        </div>
+        <div class="row-padding">
+          <div class="col m12">
+            <input class="input border" type="text" placeholder="Message" required name="Message">
+          </div>
+        </div>
+        <button class="button black margin-top" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </form>
+    </div>
+    <div class="col m6">
+      <img src="/w3images/map.jpg" class="round-large" style="width:100%">
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="container padding-large dark-grey center opacity">
+  <i class="fa fa-facebook-official hover-opacity"></i>
+  <i class="fa fa-instagram hover-opacity"></i>
+  <i class="fa fa-snapchat hover-opacity"></i>
+  <i class="fa fa-pinterest-p hover-opacity"></i>
+  <i class="fa fa-twitter hover-opacity"></i>
+  <i class="fa fa-linkedin hover-opacity"></i>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="text-white">w3.css</a></p>
+</footer>
+
+<script>
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+
+// Toggle between adding and removing the "responsive" class to navbar when the user clicks on the menu icon
+function toggleNavbar() {
+  var x = document.getElementById("myNavbar");
+  if (x.className === "navbar") {
+    x.className += " responsive";
+  } else {
+    x.className = "navbar";
+  }
+}
+</script>
+
+</body>
+</html>
+
